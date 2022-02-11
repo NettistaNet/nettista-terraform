@@ -3,6 +3,15 @@
 variable "hcloud_token" {}
 variable "cluster_base_path" {}
 
+terraform {
+  required_providers {
+    hcloud = {
+      source = "hetznercloud/hcloud"
+      version = "1.32.2"
+    }
+  }
+}
+
 # Configure the Hetzner Cloud Provider
 provider "hcloud" {
   token = "${var.hcloud_token}"
